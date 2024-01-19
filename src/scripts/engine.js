@@ -52,18 +52,21 @@ function checkMatch(){
     //resetar cartas salvas na memória
     openCards = []; 
 
-    //reiniciar jogo depois de virara todas as cartas
+    //reiniciar jogo depois de virar todas as cartas
     if(document.querySelectorAll(".boxMatch").length === emojis.length){
         alert("Você venceu!")
     }
 }
 //disparar som (certo ou errado) ao clicar nas cartas
-function virarCarta(carta) {
+let certo = getElementById("somCerto");
+let errado = getElementById("somErrado");
+
+function virarCarta() {
     if (openCards[0].innerHTML === openCards[1].innerHTML) {
-      document.getElementById('somCerto').play();
+      certo.play();
       // Lógica para virar a carta correta
     } else {
-      document.getElementById('somErrado').play();
+      errado.play();
       // Lógica para virar a carta errada
     }
   }
